@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-rabbitMQ #在eureka里显示的application的名字
+  profiles:
+    active: dev
+server:
+  port: 5777
+  
