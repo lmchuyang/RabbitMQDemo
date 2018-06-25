@@ -1,0 +1,40 @@
+
+spring: 
+  redis: 
+    timeout: 0
+    host: 192.168.11.1
+    port: 6379
+    password: 
+    pool: 
+      max-active: 600
+      max-wait: 1000
+      max-idle: 300
+      min-idle: 0
+  rabbitmq:
+    host: 192.168.11.43
+    #host: 172.22.102.23
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host: /
+    #支持发布确认
+    publisher-confirms: true
+    #支持发布返回
+    publisher-returns: true
+    listener:
+      simple:
+      #采用手动应答
+        acknowledge-mode: manual
+        #当前监听容器数量
+        concurrency: 1
+        max-concurrency: 1
+        #是否支持重试
+        retry:
+          enabled: true
+#服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@192.168.11.45:8761/eureka 
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
