@@ -1,0 +1,5 @@
+server:
+  port: 5012
+spring:
+  application:
+    name: test-docker
