@@ -2,6 +2,10 @@
 rabbitMQ消息服务管理，生产者消费者一些模式开发，测试的 docker容器运行项目
 
 
+SpringBootRabbitMQMany  多个消息的发送和接收者
+
+SpringBootRabbitMQ   单个消费者和生产者
+
 先熟悉下面会用到的一些名词~
 
 exchange： 交换机
@@ -36,4 +40,9 @@ Header Exchange
 
 在msg上设置过期时间
 在队列上设置过期时间
+
+
+
+testdocker  这个项目是测试容器服务时候用的，
+springboot项目，然后在pom.xml文件依赖docker 直接用maven打包到相对应的服务器中，服务器必须先安装docker部署环境
 
